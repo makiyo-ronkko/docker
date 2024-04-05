@@ -19,4 +19,4 @@ EXPOSE 8000
 
 # translate deno run --allow-net --unstable --watch app-run.js
 # --allow-env allows to access to the PGHOST environmental variable
-CMD [ "run", "--allow-net", "--allow-env", "--watch", "--unstable", "app-run.js" ]
+CMD [ "run", "--allow-net", "--allow-env", "--allow-read", "--watch", "--unstable", "app-run.js" ]
