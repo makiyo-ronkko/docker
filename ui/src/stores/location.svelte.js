@@ -11,7 +11,6 @@ let initialLocation = (() => {
 })();
 
 const locationStore = writable(initialLocation);
-console.log({ locationStore });
 
 const useLocationStore = () => {
   return {

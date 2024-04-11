@@ -66,7 +66,6 @@ const loginUser = async (c) => {
 
   // user: eamil, password, verification
   const user = await userService.findUserByEmail(body.email);
-  console.log(user);
   if (!user) {
     return c.text(`No user with the email ${body.email} exists.`);
   }
