@@ -27,5 +27,19 @@ services:
     volumes:
       - ./flyway/sql:/flyway/sql
     command: -connectRetries=60 -baselineOnMigrate=true migrate
-# Flyway should be run with the command migrate and that Flyway should wait for
-# the database to be available for 60 seconds before giving up on migration attempt
+  # Flyway should be run with the command migrate and that Flyway should wait for
+  # the database to be available for 60 seconds before giving up on migration attempt
+  ui:
+    build: ui
+    restart: unless-stopped
+    volumes:
+      - ./ui:/app
+    ports:
+      - 5173:5173
+    depends_on:
+      - api
+  # The service is built from the folder ui of the project (the Svelte application).
+  # For development purposes, we bind the folder ui of our project to the /app folder of the container
+  # this way, changes to the project are immediately reflected in the container.
+  # We also expose the port 5173 of the container to the port 5173 of the host machine,
+  # and finally define that the ui depends on the service api.
