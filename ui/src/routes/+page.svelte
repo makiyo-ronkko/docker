@@ -7,6 +7,8 @@
   import Password from '../components/Password.svelte';
   import List from '../components/List.svelte';
   import Location from '../components/Location.svelte';
+  import Dog from '../components/Dog.svelte';
+  import Nameday from '../components/Nameday.svelte';
   // let { name } = $props();
   let name = 'Elle';
   // let age = $state(0);
@@ -48,6 +50,14 @@
 <br />----------------<br />
 
 <Location />
+
+<br />----------------<br />
+
+<Dog />
+
+<br />----------------<br />
+
+<Nameday />
 
 <style>
   /* CSS goes here */
